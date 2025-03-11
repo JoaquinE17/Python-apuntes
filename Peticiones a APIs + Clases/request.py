@@ -1,5 +1,13 @@
 # REQUEST API -------------------------------------------------------------------------------------------------------------------------------------->
 
+# Envocar api
+# dotenv -> Si no tienes el paquete 'dotenv' instalado, instálalo. Si trabajas en Python, puedes usar el paquete 
+#'python-dotenv' para cargar las variables de entorno. El comando es 'pip install python-dotenv'.
+from dotenv import load_dotenv
+import os
+load_dotenv() # cargar el .env
+api_key = os.getenv('API_KEY') # acceder a 'API_KEY'
+
 ## PETICIONES A APIs CON PYTHON
 #  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #########################################################################################################
@@ -156,7 +164,7 @@ print(api_response['error']['message'])
 
 print("\n> DEEPSEEK:")
 
-DEEPSEEK_KEY = "sk-XXXXXXXXXXXXXXXX"
+DEEPSEEK_KEY = api_key
 
 def call_deepseek(api_key, prompt):
 	url = "https://api.deepseek.com/chat/completions"
@@ -171,8 +179,8 @@ def call_deepseek(api_key, prompt):
 	response = requests.post(url, json=data, headers=headers)
 	return response.json()
 
-api_response = call_deepseek(DEEPSEEK_KEY,"Escribe un poema sobre programacion")
-print(api_response['error']['message']) 
+api_response = call_deepseek(DEEPSEEK_KEY,"Escribe una idea sobre programacion")
+print(api_response['choices'][0]['message']['content']) 
 
 
  

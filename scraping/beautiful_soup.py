@@ -2,6 +2,7 @@
 '''
 Esta es una de las dependencias mas utilizadas para hacer scraping en python.
 Pero requiere que importemos 'requests', por que no realiza peticiones, solo recibe y trabaja con el 'html' que recupera esta dependencia
+	-> [https://www.crummy.com/software/BeautifulSoup/]
 
 '''
 # pip3 install bs4 -> Para instalar la dependencia i poder utilizar beautiful

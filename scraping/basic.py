@@ -22,12 +22,25 @@ Scraping web: Existen varios sistemas para scrapear una web nos sentraremos en s
 								- No puede saltarse los captcha y ni los paywall
 								- Tampoco puedes navegar
 								- La busqueda es manual requiere el uso de expreciones regulares
+								- No funciona con SPAs
+								(*) Trabaja sobre una Pagina Estatica
 				. Beautiful Soup ->	+ Extremadamente rapido
 									+ Sencillo de implementar
 									+ Facilidad para filtrar y encontrar elementos, atributos, etc
 									- No puede saltarse los paywall ni los captchas
 									- No se puede navegar, pero si seguir el flujo de las URLs que se encuentres en el html
-				. ??? 
+									- No funciona con SPAs
+									(*) Trabaja sobre una Pagina Estatica
+				. Playwright ->	+ Simular un usuario y navegar la pagina 
+								+ Utilidades como capturas de pantalla
+								+ Cargar el JavaScript de la pagina
+								+ Funciona con SPAs
+								+ Es mas facil saltarse los paywalls o modales o lo que sea
+								- MAS LENTO Y COSTOSO
+								(*) Trabaja sobre un Pagina Dinamica, es decir que espera un cierto tiempo para confirmar si la pagina cambia
+									y aparece un valor dado que no aparece en la primera iteracion
+* SPA -> Single Page Aplication, solo se ejecutan en el cliente, quiere decir que la pagina no presenta html por lado del cliente
+
 
 Siempre cuando se realiza una peticion (requests) se envia el Agente de Usuario (UserAgent)
 Por ejemplo, usando la consola del navegador se puede saberlo escribiendo [navigator.usserAgent]:
@@ -48,7 +61,7 @@ Para esto accede a googlebot(rastreadores habituales) copia un agente bot de goo
 TENER CUIDADO!!!
 Si al momento de hacer esto (entrar a una pagina web con el agente de googlebot) y usar nuestra IP puede que nos restringan el acceso a esa web
 Ahora bien, si haces SCRAPING y/o usas este truco siempre usar un VPN (por ejemplo warp u otras)
-El proxi es la unica alternativa para la navegacion segura.
+El proxi es la unica alternativa para la navegacion segura. SIEMPRE USARLO AL HACER SCRAPING
 
 '''
 # pip3 install requests -> Instalar la dependencia para hacer peticiones 
